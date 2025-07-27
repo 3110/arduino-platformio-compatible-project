@@ -1,7 +1,7 @@
 {
-  "name": "SampleLib",
+  "name": "Arduino and PlatformIO IDE Compatible Project",
   "version": "1.0.0",
-  "description": "A sample project structure for Arduino and PlatformIO compatibility",
+  "description": "This demonstrates how to create a library that works with both Arduino IDE and PlatformIO.",
   "keywords": [
     "arduino",
     "platformio",
@@ -39,7 +39,6 @@
   ],
   "export": {
     "include": [
-      "include/*",
       "src/*",
       "examples/*",
       "library.properties",
