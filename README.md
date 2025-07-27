@@ -10,19 +10,20 @@ arduino-platformio-compatible-project/
 │   ├── Sample1/
 │   │   └── Sample1.ino
 │   └── Sample2/
-│       └── Sample2.ino
-├── include/           # ライブラリのヘッダーファイル
-│   └── SampleLib.h
+│        └── Sample2.ino
 ├── src/               # ライブラリのソースコード
 │   └── SampleLib.cpp
-├── platformio.ini     # PlatformIO設定ファイル
+│   └── SampleLib.h
+├── library.properties # Arduino IDEのライブラリ設定
+├── library.json       # PlatformIO IDEのライブラリ設定
+├── platformio.ini     # PlatformIO IDE設定ファイル
 └── README.md
 ```
 
 ## Arduino IDEでの使用方法
 
-1. `examples/`フォルダ内の任意のサンプル（例：`Sample1/`）を開く
-2. Arduino IDEでそのまま編集・コンパイル・アップロードが可能
+1. GitHubからリポジトリのZIPファイルをダウンロードする
+2. 「スケッチ」メニューから「ライブラリをインクルード」「.ZIP形式のライブラリをインストール...」を選択し，ダウンロードしたZIPファイルを指定する。
 
 ## PlatformIO IDEでの使用方法
 
@@ -51,10 +52,10 @@ PlatformIO IDEでは`src_dir`に指定されたフォルダの直下にある`.i
 ### ライブラリパスの設定によるワークアラウンド
 
 ```ini
-lib_extra_dirs = ../../src,../../include
+lib_extra_dirs = ../../src
 ```
 
-ライブラリのソースコードを`src`の直下にまとめる方法もありますが，このようにソースファイルとヘッダファイルを分けておかないと，`lib_deps`で指定したライブラリのコンパイル時にヘッダが見つからないという問題が出ます。
+このリポジトリで提供するコードを置くフォルダ（`src`フォルダ）を`lib_extra_dirs`で指定します。`src_dir`が`examples`フォルダの直下のフォルダになっているため，そこからの相対パスで指定する必要があります。
 
 ## 参考
 
