@@ -1,0 +1,11 @@
+{
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_style": "file",
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+    },
+    "files.associations": {
+        "*.ino": "cpp"
+    }
+}
